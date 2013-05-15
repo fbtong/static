@@ -1,0 +1,20 @@
+/* map ratio */
+.ratio {
+	height:9px;
+	width:100%;
+	background:#DDDDDD;
+}
+.ratio .length {
+	background:#F03131;
+	height:9px;
+	width:50px;
+}
+
+/* text on one line */
+.text-online {
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*  */

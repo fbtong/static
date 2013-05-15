@@ -1,0 +1,14 @@
+/* table layout */
+.table {
+	display:table;
+	border-collapse:collapse;
+	width:100%;
+	text-align:center;
+	table-layout:fixed;
+}
+.table .row {
+	display:table-row;
+}
+.table .cell {
+	display:table-cell;
+}
