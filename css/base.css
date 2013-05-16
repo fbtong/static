@@ -50,3 +50,28 @@
 	font-size: 0;
 	line-height: 0;
 }
+/* page scroll */
+.scroll-section {
+	position: relative;
+	left: 0;
+	right: 0;
+	height:100%;
+}
+.scroll-head {
+	background:#FFF;
+	position:relative;
+}
+.scroll-body {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 118px;
+	bottom: 0;
+	overflow: auto;
+}
+.mr {
+	margin-right:-15px;
+}
+.line-shadow {
+	box-shadow:0 2px 6px rgba(204,204,204,.5);
+}
