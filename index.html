@@ -19,6 +19,15 @@
 		</div>
 	</div>
 	/* 事件重叠时，href绑定 */
-	<a class="ii JtipShare" href="javascript:singleshare('${t.id}')"><i class="icon-share"></i></a>
+	<a class="ii Jtip" href="javascript:aa()"><i class="icon-share"></i></a>
+	/* upload */
+	<div class="upload">
+		<form id="JUploadform" action="url" method="post" enctype="multipart/form-data" target="JUploadFrame">
+			<iframe name="JUploadFrame" id="JUploadFrame" class="hidden"></iframe>
+			<a class="btn" href="#">上传文件</a>
+			<input type="file" class="file" id="JfileUploader" name="JfileUploader" accept="image/gif, image/jpeg, image/png">
+		</form>
+	</div>
+	
 	</body>
 </html>
