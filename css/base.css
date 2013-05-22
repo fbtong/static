@@ -113,3 +113,12 @@
 	-webkit-box-shadow:5px -5px 5px #999 inset;           /* For Chrome5+, Safari5+ */
 	box-shadow:5px -5px 5px #999 inset;                   /* For Latest Opera */
 }
+.box-shadow{
+	-moz-box-shadow:-2px -2px 4px #E7E7E7 inset;              /* For Firefox3.6+ */
+	-webkit-box-shadow:-2px -2px 4px #E7E7E7 inset;           /* For Chrome5+, Safari5+ */
+	box-shadow:-2px -2px 4px #E7E7E7 inset; 
+	height:300px;/* For Latest Opera */
+}
+body {
+font:12px/1.5 tahoma,arial,Hiragino Sans GB,\5b8b\4f53;
+}
