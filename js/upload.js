@@ -8,7 +8,8 @@ $(function(){
 		container : 'upcontainer',
 		max_file_size : '10mb',
 		url : SERVERPATH + '/pc/upload/uploadfile?parent='+upRoot,
-		flash_swf_url : SERVERPATH + '/static/app/skydrive/js/plugin/plupload.flash.swf'
+		flash_swf_url : SERVERPATH + '/static/app/skydrive/js/plugin/plupload.flash.swf',
+		multi_selection:false
 	});
 	
 	uploader.bind('Init', function(up, params) {
@@ -24,12 +25,21 @@ $(function(){
 		
 		var fileRegExp = eval('/.*\.('+fileType+')$/'), tipInfo = '请选择正确的文件！';
 		
+		console.log(up.files.length);
+		
+		while(up.files.length > 4) {
+            up.removeFile(up.files[0]);
+        }
+		
 		$.each(files, function(i, file) {
 			if( !(fileRegExp.test(file.name)) ){
 				alert(tipInfo);
 			} else {
 				
 			}
+			/*if(file.size > max) {
+				
+			}*/
 		});
 		
 		up.refresh();
