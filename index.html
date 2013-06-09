@@ -5,6 +5,7 @@
 		<title>test</title>
 		<link type="text/css" rel="stylesheet" charset="utf-8" href="css/layout.css">
 		<link type="text/css" rel="stylesheet" charset="utf-8" href="css/base.css">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
 	</head>
 	<body>
 	/* table layout */
@@ -30,9 +31,98 @@
 			<input type="file" class="file" id="JfileUploader" name="JfileUploader" accept="image/gif, image/jpeg, image/png">
 		</form>
 	</div>
-	
-	<div class="box-shadow">
-		
+
+	<div class="form-data">
+		<dl>
+			<dt>text</dt>
+			<dd><input type="text" class="text" value=""></dd>
+		</dl>
 	</div>
+	<div class="form-data">
+		<dl>
+			<dt>text</dt>
+			<dd><input type="text" class="text" value=""></dd>
+		</dl>
+	</div>
+	<div class="box-shadow">
+		<a href="#" id="a-toggle">test toggle</a>
+		<div id="test-toggle">now show, next will hidden.</div>
+	</div>
+	
+	<script type="text/javascript">
+		
+		var form = (function(){
+			
+			//form setup
+			
+			return {
+				defaultSet : function(formEls, formElsDefault){
+					formEls.each(function(i, el){
+						var cDv = formElsDefault[i];
+						$(el).val(cDv).addClass('default');
+						$(el).focus(function(){
+							var cV = $.trim($(this).val());
+							if(cV.length === 0 || cV == cDv) {
+								$(this).val('');
+							}
+							$(this).removeClass('default');
+						});
+						$(el).blur(function(){
+							var cV = $.trim($(this).val());
+							if(cV.length === 0 || cV == cDv) {
+								$(this).val(cDv);
+								$(this).addClass('default');
+							}
+						})
+					});
+				}
+			}
+			
+		})();
+		(function($){
+			$.extend($.fn, {
+				form : function(){
+					var formEls = $(this.selector);
+					return {
+						defaultSet : function(formElsDefault){
+							formEls.each(function(i, el){
+								var cDv = formElsDefault[i];
+								$(el).val(cDv).addClass('default');
+								$(el).focus(function(){
+									var cV = $.trim($(this).val());
+									if(cV.length === 0 || cV == cDv) {
+										$(this).val('');
+									}
+									$(this).removeClass('default');
+								});
+								$(el).blur(function(){
+									var cV = $.trim($(this).val());
+									if(cV.length === 0 || cV == cDv) {
+										$(this).val(cDv);
+										$(this).addClass('default');
+									}
+								})
+							});
+						}
+					}
+				}
+			});
+		})(jQuery);
+	
+		$(function(){
+			
+				var formElsDefault = ['默认值1', '默认值2'];
+				//form.defaultSet($('.text'), formElsDefault);
+				$('.text').form().defaultSet(formElsDefault);
+				$('#a-toggle').click(function(){
+					$('#test-toggle').toggle();
+					if($('#test-toggle').css('display')=='block') {
+						$('#test-toggle').html('asdfasdfsadf');
+					} else {
+						$('#test-toggle').html('');
+					}
+				});
+		});
+	</script>
 	</body>
 </html>
