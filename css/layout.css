@@ -8,12 +8,33 @@
 }
 .table .row {
 	display:table-row;
+	/*width:100%;*/
 }
 .table .cell {
 	display:table-cell;
+	/*float:left;*/
 }
 /* box layout */
 
-/* float layout */
-
+/* float grid layout */
+.grid {
+	float:left;
+}
+.grid.g1 {
+	width:170px;
+}
+.grid.g2 {
+	width:150px;
+	float:right;
+}
+.grid.g3 {
+	
+}
+.main {
+	width:100%;
+}
+.layout {
+	margin:0 auto;
+	width:1000px;
+}
 /* position layout */
