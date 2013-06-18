@@ -125,3 +125,50 @@ font:12px/1.5 tahoma,arial,Hiragino Sans GB,\5b8b\4f53;
 .default {
 	color:#EEE;
 }
+
+.main-nav {
+	height:40px;
+}
+.main-nav ul {
+	height:40px;
+	border-bottom: 1px solid #FE7E01;
+	_overflow:hidden;
+}
+.main-nav li,.main-nav li a {
+	float:left;
+	display:block;
+	text-align:center;
+	cursor:pointer;
+	height:39px;
+	line-height:39px;
+}
+.main-nav li {
+	overflow:hidden;
+	margin-right:1px;
+	border:1px solid #ccc;
+	border-bottom:none;
+	background:-moz-linear-gradient(center top,#fff,#ededed);
+	background:-webkit-gradient(linear,0 0,0 bottom,from(#fff),to(#ededed));
+	filter:alpha(opacity = 100 finishopacity = 100 style = 1 startx = 0,starty = 0,finishx = 0,finishy = 30) progid:DXImageTransform.Microsoft.gradient(startcolorstr = #ffffffff,endcolorstr = #ffededed,gradientType = 0);
+}
+.main-nav li a {
+	padding:0 1.5em;
+	color:#000;
+	outline:none;
+}
+.main-nav li a:hover {
+	color:#C00;
+	text-decoration:none;
+}
+.main-nav li.current {
+	border-color:#FE7E01;
+	position:relative;
+	font-weight:bolder;
+	font-size:1.2em;
+	background:#fff;
+	filter:none;
+	height:40px;
+}
+.main-nav li.current a {
+	color:#F00;
+}
