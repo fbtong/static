@@ -16,25 +16,29 @@
 }
 /* box layout */
 
-/* float grid layout */
+/* float  layout */
 .grid {
 	float:left;
-}
-.grid.g1 {
-	width:170px;
-}
-.grid.g2 {
-	width:150px;
-	float:right;
-}
-.grid.g3 {
-	
-}
-.main {
-	width:100%;
 }
 .layout {
 	margin:0 auto;
 	width:1000px;
+}
+.col-nav {
+	width:170px;
+	float:left;
+}
+.col-filter {
+	width:150px;
+	float:right;
+}
+.col-main {
+	width:680px;
+	float:left;
+	/*width:100%;*/
+}
+.col-main .in {
+	margin-left:170px;
+	margin-right:150px;
 }
 /* position layout */

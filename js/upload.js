@@ -46,7 +46,10 @@ $(function(){
 		//uploader.start();
 	});
 
-	uploader.bind('FileUploaded', function(up, file) {
+	uploader.bind('FileUploaded', function(up, file, info) {
+		console.log(info.response);
 		window.location.reload();
+		//http://www.plupload.com/plupload/docs/api/index.html#class_plupload.Uploader.html
 	});
+	
 });

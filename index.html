@@ -3,23 +3,24 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<title>test</title>
-		<link type="text/css" rel="stylesheet" charset="utf-8" href="css/layout.css">
+		<link type="text/css" rel="stylesheet" charset="utf-8" href="css/reset.css">
 		<link type="text/css" rel="stylesheet" charset="utf-8" href="css/base.css">
+		<link type="text/css" rel="stylesheet" charset="utf-8" href="css/layout.css">
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 	</head>
 	<body>
 	/* float grid layout */
 	<div class="layout">
-		<div class="grid g1">
+		<div class="col-nav">
 			<a href="#1">grid-1</a>
 		</div>
 		
-		<div class="grid g2">
-			<a href="#2">grid-2</a>
+		<div class="col-main">
+			<a href="#main">main</a>asdfasdfasdf
 		</div>
 		
-		<div class="main">
-			<div style="margin-left:170px; margin-right:150px;"><a href="#main">main</a>asdfasdfasdf</div>
+		<div class="col-filter">
+			<a href="#2">grid-2</a>
 		</div>
 		
 	</div>
@@ -36,6 +37,7 @@
 			<div class="cell">f</div>
 		</div>
 	</div>
+	<hr>
 	/* 事件重叠时，href绑定 */
 	<a class="ii Jtip" href="javascript:aa()"><i class="icon-share"></i></a>
 	/* upload */

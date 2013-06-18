@@ -1,3 +1,5 @@
+/* reset css */
+
 body {
 	font:12px/1.5 tahoma,arial,'宋体';
 }
@@ -175,10 +177,7 @@ font:12px/1.5 tahoma,arial,Hiragino Sans GB,\5b8b\4f53;
 .main-nav li.current a {
 	color:#F00;
 }
-/* 清除浮动 */
-
-
-/* new clearfix */
+/* 清除浮动 new clearfix */
 .clearfix:after {
 visibility: hidden;
 display: block;
