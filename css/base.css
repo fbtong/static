@@ -1,4 +1,8 @@
 /* reset css */
+/* break text line */
+.bword {
+	word-wrap:break-word;
+}
 /* map ratio */
 .ratio {
 	height:9px;

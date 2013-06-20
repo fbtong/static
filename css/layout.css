@@ -43,13 +43,23 @@
 }
 /* 三列布局 -float方式2 负margin */
 .col-m-1 {
-	
+	float:left;
+	position:relative;
+	width:150px;
 }
 .col-m-2 {
-	
+	float:left;
+	width:100%;
+	margin-left:-150px;
+	margin-right:-240px;
+}
+.col-m-2 .in {
+	margin-left:150px;
+	margin-right:240px;
 }
 .col-m-3 {
-	
+	float:left;
+	width:240px;
 }
 /* position layout */
 /* 三列布局 -position方式 */
