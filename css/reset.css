@@ -100,7 +100,9 @@ hr {
 input, select {
     vertical-align:middle;
 }
-
+body {
+	font:12px/1.5 "Microsoft YaHei", tahoma,arial,'宋体',Helvetica;
+}
 /*
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 */

@@ -14,7 +14,6 @@
 	display:table-cell;
 	/*float:left;*/
 }
-/* box layout */
 
 /* float  layout */
 .grid {
@@ -24,6 +23,7 @@
 	margin:0 auto;
 	width:1000px;
 }
+/* 三列布局 -float方式1 */
 .col-nav {
 	width:170px;
 	float:left;
@@ -41,4 +41,53 @@
 	margin-left:170px;
 	margin-right:150px;
 }
+/* 三列布局 -float方式2 负margin */
+.col-m-1 {
+	
+}
+.col-m-2 {
+	
+}
+.col-m-3 {
+	
+}
 /* position layout */
+/* 三列布局 -position方式 */
+.col-1 {
+	position: absolute;
+	top:0;
+	width: 220px;
+	height: 100%;
+	left:0;
+}
+.col-2 {
+	position: absolute;
+	top:0;
+	width: 220px;
+	height: 100%;
+	right:0;
+}
+.col-3 {
+	height: 100%;
+	margin: 0 230px;
+}
+/* flexbox layout */
+.box {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: flexbox;
+}
+.box-1 {
+	padding: 30px;
+	flex: 1;
+}
+.box-2 {
+	padding: 30px;
+	width: 400px;
+}
+.box-3 {
+	padding: 30px;
+	flex: 1;
+}
