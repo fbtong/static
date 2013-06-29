@@ -39,6 +39,7 @@
 			
 			if(obj.overlay || settings.overlay) {
 				$body.append(overlay);
+				screenHeight = $('.overlay').outerHeight() - 60;
 			}
 			
 			$body.append(dialogEl);
@@ -55,7 +56,6 @@
 				dialogElLeft = parseInt(screenWeight/2 - dialogWidth/2);
 				dialogElTop = parseInt(screenHeight/2 -  dialogHeight/2);
 				$(dialogEl).css('left', dialogElLeft+'px').css('top', dialogElTop+'px');
-				console.log(dialogElTop);
 			}else{
 				dialogElLeft = elOffset.left + parseInt(elWidth/2) - parseInt(dialogWidth/2);
 				dialogElTop = elOffset.top + parseInt(elWidth/2);
