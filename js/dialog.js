@@ -9,7 +9,8 @@
 			width : 450,
 			height : 'auto',
 			overlay : false,
-			content : ''
+			content : '',
+			dialogClass : 'dialog'
 	};
 	
 	var createEl = function(tag, className){
@@ -25,12 +26,14 @@
 			   elOffset = $This.offset(),
 			   elHeight = $This.outerHeight(),
 			   elWidth = $This.outerWidth();
-		var dialogEl = createEl('div', 'dialog');
+		var dialogEl = createEl('div', settings.dialogClass);
 		
 		var dialogWidth= obj.width || settings.width;
 		$(dialogEl).css('width', dialogWidth);
 		
 		$(this).click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
 			
 			if(obj.overlay || settings.overlay) {
 				$body.append(overlay);
@@ -45,17 +48,27 @@
 				dialogEl.innerHTML = obj.content || settings.content;
 			}
 			
-			$body.append(dialogEl);
 			$(dialogEl).css('left', dialogElLeft+'px');
 			$(dialogEl).css('top', dialogElTop+'px');
+			dialogEl.setAttribute('id', obj.id);
 			
-			e.preventDefault();
+			$body.append(dialogEl);
+			
+			$(obj.close).click(function(e){
+				$(dialogEl).remove();
+				$('.overlay').remove();
+				e.preventDefault();
+				e.stopPropagation();
+			});
+			$(document).click(function(e){
+				$(dialogEl).remove();
+				$('.overlay').remove();
+			});
+			$('.'+settings.dialogClass).click(function(e){
+				e.stopPropagation();
+			});
 		});
 		
-		$body.on('click', obj.close, function(e){
-			$(dialogEl).remove();
-			e.preventDefault();
-		});
-		
-	};     
+	};
+	
 })(jQuery);

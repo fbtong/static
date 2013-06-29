@@ -14,14 +14,15 @@
 $(function(){
 	$('#test-dialog').dialog({
 		width:450,
-		close : '.tclose',
-		content:'<p style="color:red">asdfasdfasdf<br></p><a href="#" class="tclose">close</a>'
+		overlay:true,
+		close : '.close',
+		content:'<p style="color:red">asdfasdfasdf<br></p><a href="#" class="close">close</a>'
 	});
 	$('#test-dialog2').dialog({
 		width:300,
-		overlay : true,
+		close : '.close',
 		content:function(el){
-			var s1 = 'dsafasdfasdfasdfasdfasdfasdfasdf';
+			var s1 = 'dsafasdfasdfasdfasdfasdfasdfasdf<a href="#" class="close">close</a>';
 			this.innerHTML = s1;
 		}
 	});
