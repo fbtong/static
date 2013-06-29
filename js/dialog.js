@@ -60,10 +60,10 @@
 				e.preventDefault();
 				e.stopPropagation();
 			});
-			$(document).click(function(e){
+			/*$('body').on('click', (function(e){
 				$(dialogEl).remove();
 				$('.overlay').remove();
-			});
+			});*/
 			$('.'+settings.dialogClass).click(function(e){
 				e.stopPropagation();
 			});
