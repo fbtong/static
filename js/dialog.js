@@ -1,14 +1,16 @@
 (function($) {       
 	
 	var overlay = '<div class="overlay"></div>';
-		   //dialog = '<div class="dialog"></div>',
-		   //constructor, typeof, 
-		//instanceof 返回一个 Boolean 值，指出对象是否是特定类的一个实例。 
+		   //constructor, typeof,
+		   //instanceof 返回一个 Boolean 值，指出对象是否是特定类的一个实例。 
+	var screenHeight = window.screen.availHeight - 180,
+		   screenWeight = window.screen.availWidth;
 	
 	var settings = {
 			width : 450,
 			height : 'auto',
 			overlay : false,
+			screenFull : false,
 			content : '',
 			dialogClass : 'dialog'
 	};
@@ -20,7 +22,7 @@
 	};
 	
 	$.fn.dialog = function(obj) {
-	    
+			   
 		var $body = $('body'),
 			   $This = $(this),
 			   elOffset = $This.offset(),
@@ -39,8 +41,7 @@
 				$body.append(overlay);
 			}
 			
-			dialogElLeft = elOffset.left + parseInt(elWidth/2) - parseInt(dialogWidth/2);
-			dialogElTop = elOffset.top + parseInt(elWidth/2);
+			$body.append(dialogEl);
 			
 			if(obj.content && (obj.content.constructor===Function)){
 				obj.content.call(dialogEl);
@@ -48,11 +49,18 @@
 				dialogEl.innerHTML = obj.content || settings.content;
 			}
 			
-			$(dialogEl).css('left', dialogElLeft+'px');
-			$(dialogEl).css('top', dialogElTop+'px');
-			dialogEl.setAttribute('id', obj.id);
+			var dialogHeight = obj.height || $(dialogEl).height();
 			
-			$body.append(dialogEl);
+			if(obj.screenFull || settings.screenFull){
+				dialogElLeft = parseInt(screenWeight/2 - dialogWidth/2);
+				dialogElTop = parseInt(screenHeight/2 -  dialogHeight/2);
+				$(dialogEl).css('left', dialogElLeft+'px').css('top', dialogElTop+'px');
+				console.log(dialogElTop);
+			}else{
+				dialogElLeft = elOffset.left + parseInt(elWidth/2) - parseInt(dialogWidth/2);
+				dialogElTop = elOffset.top + parseInt(elWidth/2);
+				$(dialogEl).css('left', dialogElLeft+'px').css('top', dialogElTop+'px');
+			}
 			
 			$(obj.close).click(function(e){
 				$(dialogEl).remove();

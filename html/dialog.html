@@ -8,13 +8,12 @@
 		<script type="text/javascript" src="../js/dialog.js"></script>
 	</head>
 	<body>
-		<div style="padding:100px 300px"><a href="" id="test-dialog">弹出框1</a>  <a href="" id="test-dialog2">弹出框2</a> </div>
+		<div style="padding:50px 300px"><a href="" id="test-dialog">弹出框1</a>  <a href="" id="test-dialog2" style="margin-left:300px;">弹出框2</a> </div>
 		<div><a href="#" class="tclose" id="test-close">close</a></div>
 		<script type="text/javascript">
 $(function(){
 	$('#test-dialog').dialog({
 		width:450,
-		overlay:true,
 		close : '.close',
 		content:'<p style="color:red">asdfasdfasdf<br></p><a href="#" class="close">close</a>'
 	});
