@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>dialog</title>
+		<link type="text/css" rel="stylesheet"charset="utf-8" href="../css/dialog.css">
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/dialog.js"></script>
+	</head>
+	<body>
+		<div style="padding:100px 300px"><a href="" id="test-dialog">弹出框1</a>  <a href="" id="test-dialog2">弹出框2</a> </div>
+		<div><a href="#" class="tclose" id="test-close">close</a></div>
+		<script type="text/javascript">
+$(function(){
+	$('#test-dialog').dialog({
+		width:450,
+		close : '.tclose',
+		content:'<p style="color:red">asdfasdfasdf<br></p><a href="#" class="tclose">close</a>'
+	});
+	$('#test-dialog2').dialog({
+		width:300,
+		overlay : true,
+		content:function(el){
+			var s1 = 'dsafasdfasdfasdfasdfasdfasdfasdf';
+			this.innerHTML = s1;
+		}
+	});
+});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.overlay {
+	background: #aaaaaa;
+	opacity: .3;
+	filter: Alpha(Opacity=30);
+}
+.dialog {
+	position:absolute;
+	height:auto;
+	display:block;
+	background:#FFFFFF;
+	left:0;
+	top:0;
+	width:450px;
+	padding:0.5em;
+	border:3px solid #CCCCCC;
+}

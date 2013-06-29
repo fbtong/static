@@ -36,7 +36,7 @@ footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
-nav ul {
+nav ul,ol, ul {
     list-style:none;
 }
 
@@ -56,6 +56,15 @@ a {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    text-decoration: none;
+}
+a:focus {
+    outline: thin dotted;
+}
+
+a:active,
+a:hover {
+    outline: 0;
 }
 
 /* change colours to suit your needs */
