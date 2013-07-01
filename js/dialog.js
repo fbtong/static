@@ -63,7 +63,13 @@
 				$(dialogEl).css('left', dialogElLeft+'px').css('top', dialogElTop+'px');
 			}
 			
-			$(obj.close).click(function(e){
+			/*$(obj.close).click(function(e){
+				$(dialogEl).remove();
+				$('.overlay').remove();
+				e.preventDefault();
+				e.stopPropagation();
+			});*/
+			$(dialogEl).on('click', obj.close, function(e){
 				$(dialogEl).remove();
 				$('.overlay').remove();
 				e.preventDefault();
