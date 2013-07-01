@@ -25,7 +25,6 @@
 			   
 		var $body = $('body'),
 			   $This = $(this),
-			   elOffset = $This.offset(),
 			   elHeight = $This.outerHeight(),
 			   elWidth = $This.outerWidth();
 		var dialogEl = createEl('div', settings.dialogClass);
@@ -33,9 +32,11 @@
 		var dialogWidth= obj.width || settings.width;
 		$(dialogEl).css('width', dialogWidth);
 		
-		$(this).click(function(e){
+		$This.click(function(e){
 			e.preventDefault();
 			e.stopPropagation();
+			
+			elOffset = $(this).offset();
 			
 			if(obj.overlay || settings.overlay) {
 				$body.append(overlay);
@@ -45,7 +46,7 @@
 			$body.append(dialogEl);
 			
 			if(obj.content && (obj.content.constructor===Function)){
-				obj.content.call(dialogEl);
+				obj.content.call(dialogEl, $(this));
 			}else{
 				dialogEl.innerHTML = obj.content || settings.content;
 			}
