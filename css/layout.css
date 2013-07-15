@@ -101,3 +101,11 @@
 	padding: 30px;
 	flex: 1;
 }
+/* side menu */
+.side-menu {
+	position:fixed;
+	top:100px;
+	left:50%;
+	margin-left:500px;
+	width:50px;
+}

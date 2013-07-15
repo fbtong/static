@@ -1,3 +1,9 @@
+/**
+ * Copyright © 远信科技, All Rights Reserved.
+ * 
+ * 微博方式弹窗
+ * @author yangkang
+ */
 (function($) {       
 	
 	var overlay = '<div class="overlay"></div>';
@@ -59,16 +65,10 @@
 				$(dialogEl).css('left', dialogElLeft+'px').css('top', dialogElTop+'px');
 			}else{
 				dialogElLeft = elOffset.left + parseInt(elWidth/2) - parseInt(dialogWidth/2);
-				dialogElTop = elOffset.top + parseInt(elWidth/2);
+				dialogElTop = elOffset.top + parseInt(elHeight);
 				$(dialogEl).css('left', dialogElLeft+'px').css('top', dialogElTop+'px');
 			}
 			
-			/*$(obj.close).click(function(e){
-				$(dialogEl).remove();
-				$('.overlay').remove();
-				e.preventDefault();
-				e.stopPropagation();
-			});*/
 			$(dialogEl).on('click', obj.close, function(e){
 				$(dialogEl).remove();
 				$('.overlay').remove();
@@ -82,6 +82,11 @@
 			$('.'+settings.dialogClass).click(function(e){
 				e.stopPropagation();
 			});
+			
+			/*$(window).scroll(function(){
+				dialogElTop = parseInt(screenHeight/2 -  dialogHeight/2 + $(window).scrollTop());
+				$(dialogEl).css('top', dialogElTop+'px');
+			});*/
 		});
 		
 	};

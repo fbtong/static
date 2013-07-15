@@ -9,7 +9,8 @@ $(function(){
 		max_file_size : '10mb',
 		url : SERVERPATH + '/pc/upload/uploadfile?parent='+upRoot,
 		flash_swf_url : SERVERPATH + '/static/app/skydrive/js/plugin/plupload.flash.swf',
-		multi_selection:false
+		multi_selection:false, //允许选择多个文件上传否,
+		unique_names : true
 	});
 	
 	uploader.bind('Init', function(up, params) {
