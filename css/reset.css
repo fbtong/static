@@ -1,62 +1,72 @@
-/* 
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com 
-Twitter: @rich_clark
-*/
-
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+/**
+  * reset css style
+  * @author yangkang
+  * @version 0.3.1
+  */
+html {
+	background:#FFF;
+	height:100%;
 }
-
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td {
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {
+	margin:0;
+	padding:0;
+	display:block;
+}
+audio,video {
+	background:transparent;
+}
+fieldset,img {
+	border:0;
+}
+address,caption,cite,code,dfn,i,em,strong,th,var {
+	font-style:normal;
+}
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+blockquote:before, blockquote:after,q:before,q:after {
+	content:'';
+}
+abbr,acronym {
+	border:0;
+	font-variant:normal;
+}
+sup {
+	vertical-align:text-top;
+}
+sub {
+	vertical-align:text-bottom;
+}
 body {
-    line-height:1;
+	line-height:1;
+	font:12px/1.5 "Microsoft YaHei", tahoma,arial,'宋体',Helvetica;
+}
+input,textarea,select {
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit;
+	*font-size:100%;
+	outline:none; /* chrome yellow line */
 }
 
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
-    display:block;
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
 }
-
-nav ul,ol, ul {
-    list-style:none;
-}
-
-blockquote, q {
-    quotes:none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content:'';
-    content:none;
-}
-
 a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
-    text-decoration: none;
+	text-decoration: none;
+	outline:0;
 }
 a:focus {
     outline: thin dotted;
@@ -66,52 +76,39 @@ a:active,
 a:hover {
     outline: 0;
 }
-
-/* change colours to suit your needs */
-ins {
-    background-color:#ff9;
-    color:#000;
-    text-decoration:none;
+* html .clear             { zoom: 1; } /* IE6 */
+*:first-child+html .clear { zoom: 1; } /* IE7 */
+.clear:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
 }
-
-/* change colours to suit your needs */
-mark {
-    background-color:#ff9;
-    color:#000; 
-    font-style:italic;
-    font-weight:bold;
+.hide {
+	display:none;
 }
-
-del {
-    text-decoration: line-through;
+/* power too!
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
-
-abbr[title], dfn[title] {
-    border-bottom:1px dotted;
-    cursor:help;
-}
-
-table {
-    border-collapse:collapse;
-    border-spacing:0;
-}
-
-/* change border colour to suit your needs */
-hr {
-    display:block;
-    height:1px;
-    border:0;
-    border-top:1px solid #cccccc;
-    margin:1em 0;
-    padding:0;
-}
-
-input, select {
-    vertical-align:middle;
-}
-body {
-	font:12px/1.5 "Microsoft YaHei", tahoma,arial,'宋体',Helvetica;
-}
-/*
-*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+@media screen and (max-width: 480px) {}
 */
+/* placeholder */
+input::-webkit-input-placeholder {
+   color: #CCC;
+}
+input:-moz-placeholder { /* Firefox 18- */
+   color: #CCC;  
+}
+input::-moz-placeholder {  /* Firefox 19+ */
+   color: #CCC;  
+}
+input:-ms-input-placeholder {  
+   color: #CCC;
+}

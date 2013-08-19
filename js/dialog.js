@@ -21,27 +21,79 @@
 			dialogClass : 'dialog'
 	};
 	
-	var createEl = function(tag){
+	var createEl = function(tag) {
 		var el = document.createElement(tag);
 		return el;
 	};
 	
+	var popDialog = function(This, dialogEl, obj) {
+		var $This = This;
+	           elHeight = $This.outerHeight(),
+	           elWidth = $This.outerWidth();
+	
+				elOffset = $This.offset();
+				
+		var dialogWidth= obj.width || settings.width;
+				
+				if(obj.overlay || settings.overlay) {
+					$('body').append(overlay);
+					screenHeight = $('.overlay').outerHeight() - 60;
+				}
+				
+				$('body').append(dialogEl);
+				
+				if(obj.content && (obj.content.constructor===Function)) {
+					obj.content.call(dialogEl, $(this));
+				}else{
+					dialogEl.innerHTML = obj.content || settings.content;
+				}
+				
+				var dialogHeight = obj.height || $(dialogEl).height();
+				
+				if(obj.screenFull || settings.screenFull) {
+					dialogElLeft = parseInt(screenWeight/2 - dialogWidth/2);
+					dialogElTop = parseInt(screenHeight/2 -  dialogHeight/2);
+					$(dialogEl).css('left', dialogElLeft+'px').css('top', dialogElTop+'px');
+				}else{
+					dialogElLeft = elOffset.left + parseInt(elWidth/2) - parseInt(dialogWidth/2);
+					dialogElTop = elOffset.top + parseInt(elHeight);
+					$(dialogEl).css('left', dialogElLeft+'px').css('top', dialogElTop+'px');
+				}
+		
+				$(dialogEl).on('click', obj.close, function(e) {
+					$(dialogEl).remove();
+					$('.overlay').remove();
+					e.preventDefault();
+					e.stopPropagation();
+				});
+				$('.'+settings.dialogClass).click(function(e) {
+					e.stopPropagation();
+				});
+	};
+	
 	$.fn.dialog = function(obj) {
 			   
-		var $body = $('body'),
-			   $This = $(this),
-			   elHeight = $This.outerHeight(),
-			   elWidth = $This.outerWidth();
+		var $body = $('body');
+		
 		var dialogEl = createEl('div');
 		
 		var dialogWidth= obj.width || settings.width;
 		$(dialogEl).addClass(settings.dialogClass).css('width', dialogWidth);
 		
-		$This.click(function(e){
+		if (obj.autoload) {
+			popDialog($(this), dialogEl, obj);
+		}
+		
+		//$This.click(function(e) {
+		$('body').on('click', this.selector, function(e) {
 			e.preventDefault();
 			e.stopPropagation();
 			
-			elOffset = $(this).offset();
+			var $This = $(this);
+			       elHeight = $This.outerHeight(),
+			       elWidth = $This.outerWidth();
+			
+			elOffset = $This.offset();
 			
 			if(obj.overlay || settings.overlay) {
 				$body.append(overlay);
@@ -50,7 +102,7 @@
 			
 			$body.append(dialogEl);
 			
-			if(obj.content && (obj.content.constructor===Function)){
+			if(obj.content && (obj.content.constructor===Function)) {
 				obj.content.call(dialogEl, $(this));
 			}else{
 				dialogEl.innerHTML = obj.content || settings.content;
@@ -58,7 +110,7 @@
 			
 			var dialogHeight = obj.height || $(dialogEl).height();
 			
-			if(obj.screenFull || settings.screenFull){
+			if(obj.screenFull || settings.screenFull) {
 				dialogElLeft = parseInt(screenWeight/2 - dialogWidth/2);
 				dialogElTop = parseInt(screenHeight/2 -  dialogHeight/2);
 				$(dialogEl).css('left', dialogElLeft+'px').css('top', dialogElTop+'px');
@@ -68,21 +120,21 @@
 				$(dialogEl).css('left', dialogElLeft+'px').css('top', dialogElTop+'px').css('position', 'absolute');
 			}
 			
-			$(dialogEl).on('click', obj.close, function(e){
+			$(dialogEl).on('click', obj.close, function(e) {
 				$(dialogEl).remove();
 				$('.overlay').remove();
 				e.preventDefault();
 				e.stopPropagation();
 			});
-			/*$('body').on('click', (function(e){
+			/*$('body').on('click', (function(e) {
 				$(dialogEl).remove();
 				$('.overlay').remove();
 			});*/
-			$('.'+settings.dialogClass).click(function(e){
+			$('.'+settings.dialogClass).click(function(e) {
 				e.stopPropagation();
 			});
 			
-			/*$(window).scroll(function(){
+			/*$(window).scroll(function() {
 				dialogElTop = parseInt(screenHeight/2 -  dialogHeight/2 + $(window).scrollTop());
 				$(dialogEl).css('top', dialogElTop+'px');
 			});*/

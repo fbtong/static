@@ -1,111 +1,58 @@
-/* table layout */
-.table {
-	display:table;
-	border-collapse:collapse;
-	width:100%;
-	text-align:center;
-	table-layout:fixed;
-}
-.table .row {
-	display:table-row;
-	/*width:100%;*/
-}
-.table .cell {
-	display:table-cell;
-	/*float:left;*/
-}
-
-/* float  layout */
-.grid {
-	float:left;
-}
-.layout {
+/**
+  * layout css style
+  * @author yangkang
+  * @version 0.3.1
+  */
+ .layout {
 	margin:0 auto;
-	width:1000px;
+	padding-top:50px;
+	width:958px;
+	min-height:600px;
+	border:1px solid #EDEDED;
+	border-top:0;
+	*zoom: 1; /* ie6 ie7*/
 }
-/* 三列布局 -float方式1 */
+.layout:after {
+	visibility:hidden;
+	display:block;
+	font-size:0;
+	content: " ";
+	clear:both;
+	height:0;
+}
 .col-nav {
-	width:170px;
+	width:159px;
 	float:left;
 }
 .col-filter {
-	width:150px;
+	width:199px;
+	padding:0 15px;
 	float:right;
+	border-top:1px solid #EDEDED;
 }
 .col-main {
-	width:680px;
+	width:570px;
 	float:left;
 	/*width:100%;*/
 }
-.col-main .in {
-	margin-left:170px;
-	margin-right:150px;
-}
-/* 三列布局 -float方式2 负margin */
-.col-m-1 {
+.col-section {
+	width:799px;
 	float:left;
-	position:relative;
-	width:150px;
 }
-.col-m-2 {
-	float:left;
+ .bg {
+  	background:#FAFAFA;
+ }
+.header {
+	background-color: #32B38C;
+	height: 50px;
 	width:100%;
-	margin-left:-150px;
-	margin-right:-240px;
-}
-.col-m-2 .in {
-	margin-left:150px;
-	margin-right:240px;
-}
-.col-m-3 {
-	float:left;
-	width:240px;
-}
-/* position layout */
-/* 三列布局 -position方式 */
-.col-1 {
-	position: absolute;
-	top:0;
-	width: 220px;
-	height: 100%;
-	left:0;
-}
-.col-2 {
-	position: absolute;
-	top:0;
-	width: 220px;
-	height: 100%;
-	right:0;
-}
-.col-3 {
-	height: 100%;
-	margin: 0 230px;
-}
-/* flexbox layout */
-.box {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -o-flex;
-	display: -ms-flex;
-	display: flexbox;
-}
-.box-1 {
-	padding: 30px;
-	flex: 1;
-}
-.box-2 {
-	padding: 30px;
-	width: 400px;
-}
-.box-3 {
-	padding: 30px;
-	flex: 1;
-}
-/* side menu */
-.side-menu {
 	position:fixed;
-	top:100px;
-	left:50%;
-	margin-left:500px;
-	width:50px;
+	left:0;
+	top:0;
+	z-index:11;
+}
+.header .in {
+	width:960px;
+	margin:0 auto;
+	position:relative;
 }
