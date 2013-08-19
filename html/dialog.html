@@ -27,6 +27,15 @@ $(function(){
 			this.innerHTML = s1;
 		}
 	});
+	
+	$('body').dialog({
+		width : 230,
+		autoload: true,
+		overlay:true,
+		screenFull:true,
+		close : '.close',
+		content : 'abcde <a href="" class="close">close</a>'
+	});
 });
 		</script>
 	</body>

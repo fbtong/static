@@ -6,7 +6,7 @@ html,body {
 	margin:0;
 }
 style,script {
-	display:block;
+	/*display:block;*/
 }
 .overlay {
 	position: fixed;
@@ -28,9 +28,33 @@ style,script {
 	left:0;
 	top:0;
 	width:450px;
-	padding:0.5em;
 	border:3px solid #CCCCCC;
+	z-index:10;
 }
 .dialog .off {
-	position:absolute; right:0;top:0
+	position:absolute; right:0.4em;top:0.2em;
+	font-size:14px;
+}
+.dialog .do-content {
+	padding:12px 15px;
+}
+.dialog .do-content .form-data {
+	padding:0;
+}
+.dialog .do-content .form-data dt {
+	width:115px;
+}
+.dialog .do-content .form-data dd {
+	padding-left:125px;
+	padding-right:0;
+}
+.dialog .do-content .text {
+	width:100%;
+}
+.dialog .do-foot {
+	padding:0 15px 12px 15px;
+	text-align:right;
+}
+.dialog .do-foot .button {
+	margin-left:12px;
 }
