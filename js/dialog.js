@@ -21,9 +21,8 @@
 			dialogClass : 'dialog'
 	};
 	
-	var createEl = function(tag, className){
+	var createEl = function(tag){
 		var el = document.createElement(tag);
-		el.setAttribute('class', className);
 		return el;
 	};
 	
@@ -33,10 +32,10 @@
 			   $This = $(this),
 			   elHeight = $This.outerHeight(),
 			   elWidth = $This.outerWidth();
-		var dialogEl = createEl('div', settings.dialogClass);
+		var dialogEl = createEl('div');
 		
 		var dialogWidth= obj.width || settings.width;
-		$(dialogEl).css('width', dialogWidth);
+		$(dialogEl).addClass(settings.dialogClass).css('width', dialogWidth);
 		
 		$This.click(function(e){
 			e.preventDefault();
@@ -66,7 +65,7 @@
 			}else{
 				dialogElLeft = elOffset.left + parseInt(elWidth/2) - parseInt(dialogWidth/2);
 				dialogElTop = elOffset.top + parseInt(elHeight);
-				$(dialogEl).css('left', dialogElLeft+'px').css('top', dialogElTop+'px');
+				$(dialogEl).css('left', dialogElLeft+'px').css('top', dialogElTop+'px').css('position', 'absolute');
 			}
 			
 			$(dialogEl).on('click', obj.close, function(e){

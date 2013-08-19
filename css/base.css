@@ -1,4 +1,17 @@
-/* reset css */
+/* reset css start */
+/* reset css end */
+/* layout css start */
+/* layout css end */
+/* nav&menu css start */
+/* nav&menu css start */
+/* list data css start */
+/* list data css start */
+/* form css start */
+/* form css end */
+/* ie css start */
+/* ie css end */
+/* mobile css start */
+/* mobile css end */
 .headimg-pop {
 	position:absolute;
 	right:16px;
@@ -229,3 +242,77 @@ height: 0;
 }
 * html .clearfix             { zoom: 1; } /* IE6 */
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
+/* feedback */
+.feedback {
+	writing-mode:lr-tb;position:fixed;right:0;bottom:40px; text-align:left; /*z-index:11000;*/
+	font-size:12px;
+}
+* html .feedback {
+	position:absolute;
+	left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth));
+	top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight)-40);
+}
+.feedback .hand,.feedback .user-fill {
+	background:url(../image/feedback.png) no-repeat 0 -130px;
+}
+.feedback .hand {
+	width:28px;
+	height:145px;
+	color:#FFFFFF;
+	cursor:pointer;
+	line-height:100%;
+	text-align:center;
+	font-size:12px;
+	float:left;
+}
+.feedback .hand p {
+	width:12px;
+	padding-top:30px;
+	padding-left:8px;
+}
+.feedback .hand.hover {
+	background-position:-40px -130px;
+}
+.feedback .user-fill {
+	background-position:0 -381px;
+	width:0;
+	height:145px;
+	float:left;
+}
+.feedback .user-fill .textarea {
+	padding:10px; padding-left:12px; position:relative;
+}
+.feedback .user-fill textarea {
+	height:90px; width:240px; padding:0; background:transparent;border:0;resize:none;
+}
+.feedback .user-fill .placeholder {
+	position:absolute; left:15px; top:10px;color:#BABABA;
+}
+.feedback .sub {
+	text-align:right;
+	padding-top:1px;
+}
+.feedback .sub .btn {
+	margin-right:10px;
+	background:#FFFFFF;
+}
+.feedback .sub .btn.delete:hover {
+	background:#F03131;
+	border-color:#F03131;
+}
+.feedback .sub .btn.submit:hover {
+	background:#24ADDE;
+	border-color:#24ADDE;
+}
+.feedback-text {
+	color:#FF0000;font-size:14px;
+	padding-top:27px;
+	text-align:center;
+}
+.add {
+	width:85px;
+	height:85px;
+	border:2px dashed #A5A5A5;
+	font:bold 30px/85px arial,sans-serif;
+	text-align:center;
+}

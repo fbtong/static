@@ -5,6 +5,9 @@ html,body {
 	padding:0;
 	margin:0;
 }
+style,script {
+	display:block;
+}
 .overlay {
 	position: fixed;
 	top: 0;
@@ -18,7 +21,7 @@ html,body {
 	filter: Alpha(Opacity=30);
 }
 .dialog {
-	position:absolute;
+	position:fixed;
 	height:auto;
 	display:block;
 	background:#FFFFFF;
