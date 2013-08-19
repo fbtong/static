@@ -1,6 +1,4 @@
 /**
- * Copyright © 远信科技, All Rights Reserved.
- * 
  * 微博方式弹窗
  * @author yangkang
  */
