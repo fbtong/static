@@ -8,10 +8,10 @@
 				</dd>
   */
 /**
- * 定制 slide widget
+ * 定制 slide widget 鼠标拖动
  */
-$(function(){
-	$('.layout').on('mousedown', '.slider-handle', function(e) {
+$(function() {
+	$('body').on('mousedown', '.slider-handle', function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 		
@@ -31,9 +31,9 @@ $(function(){
 		
 		$(document).mousemove(function(e) {
 			 var X = e.pageX, Y = e.pageY;
-			 if(X > sX && X < (sX + sliderWidth)) {
+			 if(X > (sX-13) && X < (sX + sliderWidth)) {
 				 var range = X-sX;
-				 $This.css('left', range - 6 + 'px');
+				 $This.css('left', range - 5 + 'px');//-鼠标默认偏移
 				 var progress = range/sliderWidth*100;
 				 if (progress < 0.5) {
 					 progress = 0;
@@ -57,7 +57,7 @@ $(function(){
 		});
 		
 	});
-	$('.layout').on('click', '.slider', function(e) {
+	$('body').on('click', '.slider', function(e) {
 		e.stopPropagation();
 		
 		var $This = $(this),
