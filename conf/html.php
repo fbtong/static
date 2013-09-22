@@ -1,6 +1,6 @@
 <?php
-$title = 'base'; 
+$title = "基本页面";
 ?>
 <?php include('header.php');  ?>
-1
+
 <?php include('footer.php');  ?>
