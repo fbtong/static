@@ -5,10 +5,8 @@
   */
  .layout {
 	margin:0 auto;
-	padding-top:50px;
-	width:958px;
+	width:960px;
 	min-height:600px;
-	border:1px solid #EDEDED;
 	border-top:0;
 	*zoom: 1; /* ie6 ie7*/
 }
