@@ -8,6 +8,9 @@ html,body {
 style,script {
 	/*display:block;*/
 }
+.hide {
+	display:none;
+}
 .overlay {
 	position: fixed;
 	top: 0;
@@ -28,33 +31,67 @@ style,script {
 	left:0;
 	top:0;
 	width:450px;
-	border:3px solid #CCCCCC;
 	z-index:10;
+	box-shadow:0 5px 5px 3px rgba(204,204,204,.5);
 }
 .dialog .off {
 	position:absolute; right:0.4em;top:0.2em;
 	font-size:14px;
 }
-.dialog .do-content {
-	padding:12px 15px;
+.dialog .alert {
+	border:1px solid #D8F3EC;
+	padding:7px;
+	margin:0 10px;
+	color:#2B9272;
+	background-color:#FAFDFC;
 }
-.dialog .do-content .form-data {
-	padding:0;
+.dialog .off {
+	position:absolute; right:0.4em;top:0.2em;
+	font-size:14px;
 }
-.dialog .do-content .form-data dt {
-	width:115px;
+.dialog .dialog-head {
+	border-top:3px solid #0066FF;
+	background-color:#0066FF;
 }
-.dialog .do-content .form-data dd {
-	padding-left:125px;
-	padding-right:0;
+.dialog .dialog-head h2 {
+	height:25px;
+	line-height:25px;
+	margin-top:-25px;
+	background-color:#0066FF;
+	position:relative;
+	font-size:12px;
+	font-weight:normal;
+	color:#FFF;
+	padding-left:10px;
+	cursor:move;
 }
-.dialog .do-content .text {
-	width:100%;
+.dialog .dialog-head .close {
+	width:25px;
+	height:25px;
+	overflow:hidden;
+	cursor:pointer;
+	position:absolute;
+	right:0;
+	top:0;
 }
-.dialog .do-foot {
-	padding:0 15px 12px 15px;
+.dialog .dialog-content {
+	padding:7px 0;
+	border-left:1px solid #0066FF;
+	border-right:1px solid #0066FF;
+}
+.dialog .dialog-foot {
+	padding:0 10px 7px 10px;
 	text-align:right;
+	border-left:1px solid #0066FF;
+	border-right:1px solid #0066FF;
+	border-bottom:1px solid #0066FF;
 }
-.dialog .do-foot .button {
-	margin-left:12px;
+.dialog-search {
+	position:relative;
+	padding:0 45px 10px 10px;
+}
+.dialog-list {
+	max-height:150px;
+	padding-bottom:10px;
+	overflow:auto;
 }

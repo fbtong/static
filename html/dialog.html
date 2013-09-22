@@ -2,12 +2,27 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>dialog</title>
+		<title>dialog弹出框示例</title>
 		<link type="text/css" rel="stylesheet"charset="utf-8" href="../css/dialog.css">
 		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/dialog.js"></script>
 	</head>
 	<body>
+		<h1>dialog弹出框示例</h1>
+		<p>这里会列举出两种类型的弹窗：1、自动加载弹窗，2、点击后弹窗</p>
+		<h2>1、自动加载弹窗</h2>
+		<p>
+		<code>
+			$.dialog({
+				width : 230,
+				autoload: true,
+				overlay:true,
+				screenFull:true,
+				close : '.close',
+				content : 'abcde <a href="" class="close">close</a>'
+			});
+		</code>
+		</p>
 		<div style="padding:50px 300px"><a href="" id="test-dialog">弹出框1</a>  <a href="" id="test-dialog2">弹出框2</a> </div>
 		<div><a href="#" class="tclose" id="test-close">close</a></div>
 		<script type="text/javascript">
@@ -17,7 +32,11 @@ $(function(){
 		overlay:true,
 		screenFull:true,
 		close : '.close',
-		content:'<p style="color:red">asdfasdfasdf<br></p><a href="#" class="close">close</a>'
+		content: function(el) {
+			var dialog = this;
+			var doFrom = dialogForm('do-submit', 'content');
+			$(dialog).html(doFrom); //插入弹出框
+		}
 	});
 	$('#test-dialog2').dialog({
 		width:300,
@@ -28,14 +47,14 @@ $(function(){
 		}
 	});
 	
-	$('body').dialog({
+	/* $.dialog({
 		width : 230,
 		autoload: true,
 		overlay:true,
 		screenFull:true,
 		close : '.close',
 		content : 'abcde <a href="" class="close">close</a>'
-	});
+	}); */
 });
 		</script>
 	</body>
