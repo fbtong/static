@@ -11,25 +11,31 @@
 		<script type="text/javascript" src="../js/dialog.js"></script>
 	</head>
 	<body>
-		<div class="layout">
-		<h1>dialog弹出框示例</h1>
-		<p>这里会列举出两种类型的弹窗：1、自动加载弹窗，2、点击后弹窗</p>
-		<h2>1、自动加载弹窗</h2>
-		<p>
-		<code>
-			$.dialog({
-				width : 230,
-				autoload: true,
-				overlay:true,
-				screenFull:true,
-				close : '.close',
-				content : 'abcde <a href="" class="close">close</a>'
-			});
-		</code>
-		</p>
+		<div id="nav"></div>
+		<article>
+			<section>
+				<h1>dialog弹出框示例</h1>
+				<p>这里会列举出两种类型的弹窗：1、自动加载弹窗，2、点击后弹窗</p>
+			</section>
+			<section>
+				<h2>1、自动加载弹窗</h2>
+				<p>
+				<code>
+					$.dialog({
+						width : 230,
+						autoload: true,
+						overlay:true,
+						screenFull:true,
+						close : '.close',
+						content : 'abcde <a href="" class="close">close</a>'
+					});
+				</code>
+				</p>
+			</section>
+		</article>
 		<div style="padding:50px 300px"><a href="" id="test-dialog">弹出框1</a>  <a href="" id="test-dialog2">弹出框2</a> </div>
 		<div><a href="#" class="tclose" id="test-close">close</a></div>
-		</div>
+		
 		<script type="text/javascript">
 $(function(){
 	$('#test-dialog').dialog({
