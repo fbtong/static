@@ -1,0 +1,6 @@
+明天开发计划：
+1. 取名字 ：时光胶囊 TimeCapsule, cloneStatic,  codeSuper, UAV Static Service, clone code man - 代码克隆人
+2. 写布局，参考
+3. 整理dialog, calendar, upload, tip, slider, ztree, totop
+4. 整理代码片段：日期，单选，复选，下拉
+5. icon图标
