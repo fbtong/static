@@ -5,11 +5,10 @@
   src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v5/ODelI1aHBYDBqgeIAH2zlBM0YzuT7MdOe03otPbuUS0.woff) format('woff');
 }
 
-body, html { margin: 0; padding: 0; height: 100%; }
+body, html { margin: 0; padding: 0; height: 100%; background: #f8f8f8;}
 section, article { display: block; padding: 0; }
 
 body {
-  background: #f8f8f8;
   line-height: 1.5;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 }
