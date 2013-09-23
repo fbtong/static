@@ -48,10 +48,6 @@ sup {
 sub {
 	vertical-align:text-bottom;
 }
-body {
-	line-height:1;
-	font:12px/1.5 "Microsoft YaHei", tahoma,arial,'宋体',Helvetica;
-}
 input,textarea,select {
 	font-family:inherit;
 	font-size:inherit;
