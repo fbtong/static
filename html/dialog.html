@@ -2,39 +2,86 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>dialog弹出框示例</title>
-		<link type="text/css" rel="stylesheet"charset="utf-8" href="../css/reset.css">
-		<link type="text/css" rel="stylesheet"charset="utf-8" href="../css/layout.css">
-		<link type="text/css" rel="stylesheet"charset="utf-8" href="../css/demo.css">
-		<link type="text/css" rel="stylesheet"charset="utf-8" href="../css/dialog.css">
-		<script type="text/javascript" src="../js/jquery.min.js"></script>
-		<script type="text/javascript" src="../js/dialog.js"></script>
+		<title>dialog弹出框使用示例</title>
+		
+		<link type="text/css" rel="stylesheet"charset="utf-8" href="http://static.yxtech.cn/css/reset.css">
+		<link type="text/css" rel="stylesheet"charset="utf-8" href="http://static.yxtech.cn/css/layout.css">
+		<link type="text/css" rel="stylesheet"charset="utf-8" href="http://static.yxtech.cn/css/demo.css">
+	
+		<link rel="stylesheet" href="http://static.yxtech.cn/lib/codemirror.css">
+		<script src="http://static.yxtech.cn/lib/codemirror.js"></script>
+		<script src="http://static.yxtech.cn/lib/javascript.js"></script>
+		
+		<link type="text/css" rel="stylesheet"charset="utf-8" href="http://static.yxtech.cn/css/dialog.css">
+		<script type="text/javascript" src="http://static.yxtech.cn/js/jquery.min.js"></script>
+		<script type="text/javascript" src="http://static.yxtech.cn/js/dialog.js"></script>
 	</head>
 	<body>
-		<div id="nav"></div>
-		<article>
-			<section>
-				<h1>dialog弹出框示例</h1>
+		<div id="nav">
+	 		<h1>
+	 			<a href="http://static.yxtech.cn/" title="时光胶囊  -  TimeCapsule"><img src="http://static.yxtech.cn/img/logo.png" alt="logo"></a>
+	 		</h1>
+	 		<ul>
+		 		<li><a href="http://static.yxtech.cn/img/">img</a></li>
+		 		<li><a href="http://static.yxtech.cn/css/">css</a></li>
+		 		<li><a href="http://static.yxtech.cn/js/">js</a></li>
+		 		<li><a  class="active" href="http://static.yxtech.cn/html/">html</a></li>
+	 		</ul>
+	 	</div>
+	 	<article>
+ 			<h1>时光胶囊 TimeCapsule</h1>
+ 			
+ 			<section>
+				<h2>dialog弹出框使用示例</h2>
 				<p>这里会列举出两种类型的弹窗：1、自动加载弹窗，2、点击后弹窗</p>
+				<p>使用这个插件之前，请在页面中引入以下文件：</p>
+				
 			</section>
+			
 			<section>
 				<h2>1、自动加载弹窗</h2>
 				<p>
-				<code>
-					$.dialog({
-						width : 230,
-						autoload: true,
-						overlay:true,
-						screenFull:true,
-						close : '.close',
-						content : 'abcde <a href="" class="close">close</a>'
-					});
-				</code>
+				<textarea id="demotext">
+$.dialog({
+		width : 230,
+		autoload: true,
+		overlay:true,
+		screenFull:true,
+		close : '.close',
+		content : function(el) {
+			var dialog = this;
+			var doFrom = dialogForm('do-submit', 'content');
+			$(dialog).html(doFrom); //插入弹出框
+		}
+});
+				</textarea>
 				</p>
 			</section>
-		</article>
-		<div style="padding:50px 300px"><a href="" id="test-dialog">弹出框1</a>  <a href="" id="test-dialog2">弹出框2</a> </div>
-		<div><a href="#" class="tclose" id="test-close">close</a></div>
+			
+			<section>
+				<h2>2、点击后弹窗</h2>
+				<p>
+				<textarea id="demotext2">
+//点击此元素即可弹出
+<a href="" id="test-dialog">弹出框1</a>
+//调用方法
+$('#test-dialog').dialog({
+		width:450,
+		overlay:true,
+		screenFull:true,
+		close : '.close',
+		content: function(el) {
+			var dialog = this;
+			var doFrom = dialogForm('do-submit', 'content');
+			$(dialog).html(doFrom); //插入弹出框
+		}
+});
+				</textarea>
+				</p>
+			</section>
+			<div><a href="" id="test-dialog">弹出框1</a>  <a href="" id="test-dialog2">弹出框2</a> </div>
+ 		</article>
+		
 		
 		<script type="text/javascript">
 $(function(){
@@ -58,13 +105,28 @@ $(function(){
 		}
 	});
 	
+	var editor1 = CodeMirror.fromTextArea(document.getElementById("demotext"), {
+	      lineNumbers: true,
+	      mode: "text/html",
+	      matchBrackets: true
+	    });
+	
+	 var editor2 = CodeMirror.fromTextArea(document.getElementById("demotext2"), {
+	      lineNumbers: true,
+	      mode: "text/html",
+	      matchBrackets: true
+	    });
 	/* $.dialog({
 		width : 230,
 		autoload: true,
 		overlay:true,
 		screenFull:true,
 		close : '.close',
-		content : 'abcde <a href="" class="close">close</a>'
+		content : function(el) {
+			var dialog = this;
+			var doFrom = dialogForm('do-submit', 'content');
+			$(dialog).html(doFrom); //插入弹出框
+		}
 	}); */
 });
 		</script>

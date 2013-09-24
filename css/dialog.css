@@ -1,22 +1,14 @@
-html,body {
-	height:100%;
-}
-* {
-	padding:0;
-	margin:0;
-}
-style,script {
-	/*display:block;*/
-}
 .hide {
 	display:none;
 }
-.overlay {
+/* dialog start */
+ .overlay {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
+	z-index:5;
 }
 .overlay {
 	background: #aaaaaa;
@@ -31,12 +23,11 @@ style,script {
 	left:0;
 	top:0;
 	width:450px;
+	/* border:1px solid #D5D5D5;
+	border-top-width:4px;
+	border-top-color:#32B38C; */
 	z-index:10;
 	box-shadow:0 5px 5px 3px rgba(204,204,204,.5);
-}
-.dialog .off {
-	position:absolute; right:0.4em;top:0.2em;
-	font-size:14px;
 }
 .dialog .alert {
 	border:1px solid #D8F3EC;
@@ -50,14 +41,14 @@ style,script {
 	font-size:14px;
 }
 .dialog .dialog-head {
-	border-top:3px solid #0066FF;
-	background-color:#0066FF;
+	border-top:4px solid #32B38C;
+	background-color:#32B38C;
 }
 .dialog .dialog-head h2 {
 	height:25px;
 	line-height:25px;
 	margin-top:-25px;
-	background-color:#0066FF;
+	background-color:#32B38C;
 	position:relative;
 	font-size:12px;
 	font-weight:normal;
@@ -70,28 +61,238 @@ style,script {
 	height:25px;
 	overflow:hidden;
 	cursor:pointer;
+	background:url("http://static.yxtech.cn/img/operation-small-icon.png") no-repeat -107px -204px;
 	position:absolute;
 	right:0;
 	top:0;
+	text-indent:9999px;
 }
 .dialog .dialog-content {
 	padding:7px 0;
-	border-left:1px solid #0066FF;
-	border-right:1px solid #0066FF;
+	border-left:1px solid #D5D5D5;
+	border-right:1px solid #D5D5D5;
+}
+.dialog .dialog-content .form-data {
+	padding:0 10px;
+}
+.dialog .dialog-content .form-data dt {
+	width:115px;
+}
+.dialog .dialog-content .form-data dd {
+	padding-left:125px;
+	padding-right:0;
+}
+.dialog .text {
+	width:100%;
+}
+.dialog .textarea {
+	margin-top:10px;
 }
 .dialog .dialog-foot {
 	padding:0 10px 7px 10px;
 	text-align:right;
-	border-left:1px solid #0066FF;
-	border-right:1px solid #0066FF;
-	border-bottom:1px solid #0066FF;
+	border-left:1px solid #D5D5D5;
+	border-right:1px solid #D5D5D5;
+	border-bottom:1px solid #D5D5D5;
+}
+.dialog .dialog-foot .reset {
+	padding-left:10px;
+	padding-right:6px;
+}
+.dialog .dialog-foot .button {
+	margin-left:12px;
 }
 .dialog-search {
 	position:relative;
 	padding:0 45px 10px 10px;
 }
+.dialog .g1 .dialog-search {
+	padding-left:0;
+	padding-bottom:0;
+}
+.dialog-search.d1 {
+	padding-bottom:0;
+}
+.dialog-search .text,.dialog-search .go input,.dialog-search .add {
+	border:0;
+	height:28px;
+	*height:26px;
+	line-height:28px;
+	*line-height:26px;
+}
+.dialog-search .go input {
+	width:26px;
+	cursor:pointer;
+	background:transparent;
+}
+.dialog .dialog-content .dialog-search .text {
+	padding:0 10px;
+	border:1px solid #B4EDDA;
+	position:relative;
+}
+.dialog .dialog-content .dialog-search .text:hover,.dialog .dialog-content .dialog-search .text:focus {
+	border-color:#2D9E7C;
+	z-index:1;
+}
+.dialog-search .go,.dialog-search .add {
+	width:35px;
+	height:26px;
+	line-height:26px;
+	overflow:hidden;
+	cursor:pointer;
+	background:#E1F8F0 url("http://static.yxtech.cn/img/teamwork.png") no-repeat 0 -927px;
+	position:absolute;
+	right:9px;
+	top:0;
+	border:1px solid #B4EDDA;
+	text-indent:9999px;
+}
+.dialog-search .add {
+	background:#E1F8F0 url("http://static.yxtech.cn/img/form.png") no-repeat 11px -180px;
+}
+.dialog-search .add:hover {
+	background-position:11px -211px;
+	background-color:#70CAAF;
+	border-color:#2D9E7C;
+	z-index:1;
+}
+.dialog-search .go:hover {
+	background-position:0 -994px;
+	background-color:#70CAAF;
+	border-color:#2D9E7C;
+	z-index:1;
+}
 .dialog-list {
 	max-height:150px;
 	padding-bottom:10px;
 	overflow:auto;
+}
+.dialog-list .radio,.dialog-list .checkbox {
+	display:block;
+	line-height:27px;
+}
+.dialog-list .checkbox {
+	padding-left:20px;
+	padding-right:0;
+}
+.dialog-list .checkbox a {
+	display:block;
+	color:#2B9272;
+	background-position: 0 -703px;
+}
+.dialog-list .checkbox a:hover {
+	background-position: 0 -732px;
+}
+.dialog-list .checkbox.checked a {
+	background-position: 0 -761px;
+}
+.dialog-list .checkbox.checked a:hover {
+	background-position: 0 -791px;
+}
+.dialog-list .radio a {
+	display:block;
+	color:#2B9272;
+	line-height:27px;
+	background:#FFF;
+	border-top:1px solid #FFF;
+	border-bottom:1px solid #FFF;
+}
+.dialog-list .radio a:hover,.dialog-list .radio.checked a {
+	background:#F5FBFA;
+	border-color:#CDECE3;
+}
+.dialog .h3 {
+	color:#2B9373;
+	padding:2px 12px 7px 12px;
+}
+.dialog .code {
+	border:1px solid #B4EDDA;
+}
+.dialog .code.c1 {
+	height:104px;
+	overflow:auto;
+	margin:0 12px;
+	margin-bottom:5px;
+}
+.dialog .g1 .code.c2 {
+	height:156px;
+	overflow:auto;
+}
+.dialog .job {
+	padding:2px 10px 7px 12px;
+}
+.dialog .g1,.dialog .g2,.dialog .g3 {
+	float:left;
+	width:210px;
+}
+.dialog .g1 {
+	padding-left:12px;
+}
+.dialog .g1 .dialog-search,.tag-form {
+	padding-right:36px;
+}
+.dialog .g1 .dialog-search .go {
+	right:0;
+}
+.dialog .g1 .code {
+	height:216px;
+	margin-top:-1px;
+	overflow:auto;
+}
+.dialog .g2 {
+	width:30px;
+	padding-top:113px;
+}
+.dialog .g3.code {
+	height:244px;
+	overflow:auto;
+}
+.dialog .g3 {
+	color:#2B9373;
+}
+.dialog .g3 .t-head {
+	line-height:28px;
+	margin:0 6px;
+	border-bottom:1px dotted #A5E5D2;
+}
+.dialog .g3 .t-body {
+	padding:0 6px;
+	padding-top:6px;
+}
+.dialog .g3 .row {
+	line-height:28px;
+}
+.dialog .g3 .th1,.dialog .g3 .th2,.dialog .g3 .c1 {
+	display:inline-block;
+	padding-left:10px;
+}
+.dialog .g3 .th1 {
+	width:80px;	
+}
+.dialog .g3 .th2 {
+	text-align:right;
+}
+.dialog .g3 .c1 {
+	width:100px;
+}
+.dialog .g3 .c2 {
+	display:inline-block;
+	width:16px;
+	height:16px;
+	overflow:hidden;
+	text-indent:9999px;
+	vertical-align:middle;
+	cursor:pointer;
+	margin-top:3px;
+}
+.dialog .arrow {
+	width:30px;
+	height:30px;
+	display:block;
+	background:url("http://static.yxtech.cn/img/form.png") no-repeat 10px -862px;
+}
+.dialog .slider {
+	margin-left:25px;
+	margin-top:20px;
+	margin-bottom:5px;
 }
