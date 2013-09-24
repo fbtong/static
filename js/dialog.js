@@ -45,7 +45,7 @@
 			dialogEl.innerHTML = obj.content || settings.content;
 		}
 		
-		if($This !== undefined) {
+		if($This !== undefined && $This.constructor !== String) {
 			$(dialogEl).find('h2 em').text($This.text());
 		}
 		

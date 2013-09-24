@@ -6,6 +6,9 @@
  	<link type="text/css" rel="stylesheet"charset="utf-8" href="../css/reset.css">
 	<link type="text/css" rel="stylesheet"charset="utf-8" href="../css/layout.css">
 	<link type="text/css" rel="stylesheet"charset="utf-8" href="../css/demo.css">
+	<script src="lib/codemirror.js"></script>
+	<link rel="stylesheet" href="lib/codemirror.css">
+	<script src="lib/javascript.js"></script>
  </head>
  <body>
  	<div id="nav">
@@ -23,7 +26,7 @@
  		<h1>时光胶囊 TimeCapsule</h1>
  		<section class="first">
  			<p>在阅读本文档之前，请各位绑定hosts</p>
- 			<textarea>10.180.128.198 static.yxtech.cn</textarea>
+ 			<textarea id="demotext">10.180.128.198 static.yxtech.cn</textarea>
  			<p>此项目目前主要针对事务管理前端服务，包括事务管理的图片、样式、js使用介绍，并对交互效果提供示例。对左边栏导航在事务管理的作用，描述如下：</p>
  			<ol>
  				<li>1. img为使用的图片。</li>
@@ -55,5 +58,12 @@
  			</ul>
  		</section>
  	</article>
+ 	<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("demotext"), {
+      lineNumbers: true,
+      mode: "text/html",
+      matchBrackets: true
+    });
+  </script>
  </body>
 </html>
