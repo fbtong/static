@@ -1,36 +1,13 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>dialog弹出框使用示例</title>
-		
-		<link type="text/css" rel="stylesheet"charset="utf-8" href="http://static.yxtech.cn/css/reset.css">
-		<link type="text/css" rel="stylesheet"charset="utf-8" href="http://static.yxtech.cn/css/layout.css">
-		<link type="text/css" rel="stylesheet"charset="utf-8" href="http://static.yxtech.cn/css/demo.css">
-	
-		<link rel="stylesheet" href="http://static.yxtech.cn/lib/codemirror.css">
-		<script src="http://static.yxtech.cn/lib/codemirror.js"></script>
-		<script src="http://static.yxtech.cn/lib/javascript.js"></script>
-		
-		<link type="text/css" rel="stylesheet"charset="utf-8" href="http://static.yxtech.cn/css/form.css">
-		<link type="text/css" rel="stylesheet"charset="utf-8" href="http://static.yxtech.cn/css/dialog.css">
-		
-		<script type="text/javascript" src="http://static.yxtech.cn/js/jquery.min.js"></script>
-		<script type="text/javascript" src="http://static.yxtech.cn/js/dialog.js"></script>
-	</head>
-	<body>
-		<div id="nav">
-	 		<h1>
-	 			<a href="http://static.yxtech.cn/" title="时光胶囊  -  TimeCapsule"><img src="http://static.yxtech.cn/img/logo.png" alt="logo"></a>
-	 		</h1>
-	 		<ul>
-		 		<li><a href="http://static.yxtech.cn/img/">img</a></li>
-		 		<li><a href="http://static.yxtech.cn/css/">css</a></li>
-		 		<li><a href="http://static.yxtech.cn/js/">js</a></li>
-		 		<li><a  class="active" href="http://static.yxtech.cn/html/">html</a></li>
-	 		</ul>
-	 	</div>
-	 	<article>
+<?php
+$title = "时光胶囊 TimeCapsule - dialog弹出框使用示例";
+?>
+<?php include('../conf/header.php');  ?>
+	<link type="text/css" rel="stylesheet"charset="utf-8" href="<?php echo staticPath; ?>/css/form.css">
+	<link type="text/css" rel="stylesheet"charset="utf-8" href="<?php echo staticPath; ?>/css/dialog.css">
+	<script type="text/javascript" src="<?php echo staticPath; ?>/js/dialog.js"></script>
+
+	<?php include('../conf/nav.php');  ?>
+ 	<article>
  			<h1>时光胶囊 TimeCapsule</h1>
  			
  			<section>
@@ -132,5 +109,5 @@ $(function(){
 	}); */
 });
 		</script>
-	</body>
-</html>
+
+<?php include('../conf/footer.php');  ?>
