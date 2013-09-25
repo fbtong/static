@@ -110,10 +110,16 @@
 				 if (dialogY > Y) {
 					 var stepY = dialogY - Y;
 					 var moveTop = dialogTop - stepY;
+					 if(moveTop < 20) {
+						 moveTop = 20;
+					 }
 					 $(dialogEl).css('top', moveTop+'px');
 				 } else if (dialogY < Y) {
 					 var stepY = Y - dialogY;
 					 var moveTop = dialogTop + stepY;
+					 if(moveTop > (screenHeight - 5)) {
+						 moveTop = screenHeight - 5;
+					 }
 					 $(dialogEl).css('top', moveTop+'px');
 				 }
 				 e.stopPropagation();
