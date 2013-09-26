@@ -34,6 +34,7 @@ C:\Windows\System32\drivers\etc\hosts
  				<li>6. 单选框radio</li>
  				<li>7. 下拉框selectbox</li>
  				<li>8. 进度刻度slider</li>
+ 				<li>9. 表单<a href="<?php echo staticPath; ?>/html/form.php">form</a></li>
  			</ul>
  		</section>
  		
@@ -44,6 +45,16 @@ C:\Windows\System32\drivers\etc\hosts
  				<li>进度刻度</li>
  			</ul>
  		</section>
+ 		
+ 		<section>
+ 			<h2>mysql端口</h2>
+ 			<ul>
+ 				<li>10.180.128.198:3306 root  remote</li>
+ 				<li>GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'youpassword' WITH GRANT OPTION;</li>
+ 				<li>进度刻度</li>
+ 			</ul>
+ 		</section>
+ 		
  	</article>
  	<script>
     var editor = CodeMirror.fromTextArea(document.getElementById("demotext"), {

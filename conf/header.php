@@ -6,9 +6,9 @@ define("staticPath", "http://static.yxtech.cn");
 	<head>
 		<meta charset="UTF-8">
 		<title><?php echo $title ?></title>
-		<link type="text/css" rel="stylesheet"charset="utf-8" href="<?php echo staticPath; ?>/css/reset.css">
-		<link type="text/css" rel="stylesheet"charset="utf-8" href="<?php echo staticPath; ?>/css/layout.css">
-		<link type="text/css" rel="stylesheet"charset="utf-8" href="<?php echo staticPath; ?>/css/demo.css">
+		<link type="text/css" rel="stylesheet" charset="utf-8" href="<?php echo staticPath; ?>/css/reset.css">
+		<link type="text/css" rel="stylesheet" charset="utf-8" href="<?php echo staticPath; ?>/css/layout.css">
+		<link type="text/css" rel="stylesheet" charset="utf-8" href="<?php echo staticPath; ?>/css/demo.css">
 		
 		<script type="text/javascript" src="<?php echo staticPath; ?>/js/jquery.min.js"></script>
 		
